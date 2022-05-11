@@ -6,20 +6,23 @@ import { ProductCategoryModule } from './apis/productsCategory/productCategory.m
 import { ProductModule } from './apis/products/product.module';
 import { CustomModule } from './apis/custom/customs.module';
 import { ReviewModule } from './apis/review/reviews.module';
-import { Order } from './apis/order/entities/order.entity';
 import { OrderModule } from './apis/order/orders.module';
 import { PaymentModule } from './apis/payment/payments.module';
+import { UserModule } from './apis/user/users.module';
+import { AuthModule } from './apis/auth/auth.module';
 // import { AppController } from './app.controller';
 // import { AppService } from './app.service';
 
 @Module({
   imports: [
+    AuthModule,
     CustomModule,
     OrderModule,
     PaymentModule,
     ProductCategoryModule,
     ProductModule,
     ReviewModule,
+    UserModule,
     GraphQLModule.forRoot<ApolloDriverConfig>({
       driver: ApolloDriver,
       autoSchemaFile: 'src/commons/graphql/schema.gql',

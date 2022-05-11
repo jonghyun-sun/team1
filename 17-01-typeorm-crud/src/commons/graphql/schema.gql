@@ -38,6 +38,16 @@ type Order {
   recieverPhone: String!
 }
 
+type User {
+  id: String!
+  email: String!
+  name: String!
+  nickName: String!
+  profileImage: String!
+  isAdmin: Boolean!
+  address: String!
+}
+
 type Query {
   fetchCustoms: [Custom!]!
   fetchCustom(customId: String!): Custom!
@@ -47,14 +57,19 @@ type Query {
   fetchProduct(productId: String!): Product!
   fetchReviews: [Review!]!
   fetchReview(reviewId: String!): Review!
+  fetchUsers: [User!]!
+  fetchUser(email: String!): User!
+  fetchUser111: String!
 }
 
 type Mutation {
+  login(email: String!, password: String!): String!
   createCustom(createCustomInput: CreateCustomInput!): Custom!
   createOrder(createOrderInput: CreateOrderInput!): Order!
   createProductCategory(name: String!): ProductCategory!
   createProduct(createProductInput: CreateProductInput!): Product!
   createReview(createReviewInput: CreateReviewInput!): Review!
+  createUser(createUserInput: CreateUserInput!): User!
 }
 
 input CreateCustomInput {
@@ -86,4 +101,14 @@ input CreateReviewInput {
   reviewContent: String!
   like: Boolean!
   productId: String!
+}
+
+input CreateUserInput {
+  email: String!
+  password: String!
+  name: String!
+  nickName: String!
+  profileImage: String!
+  isAdmin: Boolean!
+  address: String!
 }

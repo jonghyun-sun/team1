@@ -7,10 +7,10 @@ import { PaymentService } from './payments.service';
 export class PaymentResolver {
   constructor(private readonly paymentService: PaymentService) {}
 
-  @Mutation(() => Payment)
-  async createPayment(@Args('price') price: number) {
-    return await this.paymentService.payment({ price });
-  }
+  // @Mutation(() => Payment)
+  // async createPayment(@Args('price') price: number) {
+  //   return await this.paymentService.payment({ price });
+  // }
   // @Query(() => [Order])
   // fetchOrder() {
   //   return this.orderService.findAll();
