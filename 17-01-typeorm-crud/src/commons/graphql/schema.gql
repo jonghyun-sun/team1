@@ -1,0 +1,89 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type ProductCategory {
+  id: String!
+  name: String!
+}
+
+type Product {
+  id: String!
+  name: String!
+  description: String!
+  price: Int!
+  like: Int!
+  image: String!
+  thumbnailImage: String!
+}
+
+type Custom {
+  id: String!
+  key: String!
+  color: String!
+}
+
+type Review {
+  id: String!
+  reviewContent: String!
+  like: Boolean!
+}
+
+type Order {
+  id: String!
+  count: Int!
+  price: Int!
+  address: String!
+  recieverName: String!
+  recieverPhone: String!
+}
+
+type Query {
+  fetchCustoms: [Custom!]!
+  fetchCustom(customId: String!): Custom!
+  fetchOrder: [Order!]!
+  fetchOrders: String!
+  fetchProducts: [Product!]!
+  fetchProduct(productId: String!): Product!
+  fetchReviews: [Review!]!
+  fetchReview(reviewId: String!): Review!
+}
+
+type Mutation {
+  createCustom(createCustomInput: CreateCustomInput!): Custom!
+  createOrder(createOrderInput: CreateOrderInput!): Order!
+  createProductCategory(name: String!): ProductCategory!
+  createProduct(createProductInput: CreateProductInput!): Product!
+  createReview(createReviewInput: CreateReviewInput!): Review!
+}
+
+input CreateCustomInput {
+  key: String!
+  color: String!
+  productId: String!
+}
+
+input CreateOrderInput {
+  count: Int!
+  price: Int!
+  address: String!
+  recieverName: String!
+  recieverPhone: String!
+  productId: String!
+}
+
+input CreateProductInput {
+  name: String!
+  description: String!
+  price: Int!
+  like: Int!
+  image: String!
+  thumbnailImage: String!
+  productTags: [String!]!
+}
+
+input CreateReviewInput {
+  reviewContent: String!
+  like: Boolean!
+  productId: String!
+}
