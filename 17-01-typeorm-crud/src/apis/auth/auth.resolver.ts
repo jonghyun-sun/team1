@@ -10,7 +10,7 @@ export class AuthResolver {
     private readonly authService: AuthService,
     private readonly userService: UserService,
   ) {}
-
+//test
   @Mutation(() => String)
   async login(
     @Args('email') email: string,
