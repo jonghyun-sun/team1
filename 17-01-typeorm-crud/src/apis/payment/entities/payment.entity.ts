@@ -28,13 +28,17 @@ export class Payment {
   @Field(() => Int)
   price: number;
 
-  @Column()
-  @Field(() => String)
-  coupon: string;
+  // @Column()
+  // @Field(() => String)
+  // coupon: string;
 
   @Column()
   @Field(() => Int)
-  salesPrice: number;
+  discountAmount: number;
+
+  @Column()
+  @Field(()=> String)
+  impUid: string
 
   @Column({ type: 'enum', enum: PAYMENT_STATUS_ENUM })
   @Field(() => PAYMENT_STATUS_ENUM)
@@ -42,5 +46,5 @@ export class Payment {
 
   @CreateDateColumn()
   @Field(() => Date)
-  createdAt: Date;
+  paymentDate: Date;
 }
