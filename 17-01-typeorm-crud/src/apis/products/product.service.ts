@@ -52,34 +52,4 @@ export class ProductService {
       productTags: result2,
     });
   }
-  // async update({ productId, updateProductInput }) {
-  //   const product = await this.productRepository.findOne({
-  //     where: { id: productId },
-  //   });
-  //   const newProduct = {
-  //     ...product,
-  //     ...updateProductInput,
-  //     // id: product.id,
-  //     // name: product.name,
-  //     // description: product.description,
-  //     // price: product.price,
-  //     // isSoldout: product.isSoldout,
-  //     // description: updateProductInput.description
-  //     // price: updateProductInput.price
-  //   };
-  //   return await this.productRepository.save(newProduct);
-  // }
-  // async checkSoldout({ productId }) {
-  //   const product = await this.productRepository.findOne({
-  //     where: { id: productId },
-  //   });
-  //   if (product.isSoldout)
-  //     throw new UnprocessableEntityException('이미 판매 완료된 상품입니다.');
-  // if (product.isSoldout) {
-  //   throw new HttpException(
-  //     '이미 판매 완료된 상품입니다.',
-  //     HttpStatus.UNPROCESSABLE_ENTITY,
-  //   );
-  // }
-  // }
 }

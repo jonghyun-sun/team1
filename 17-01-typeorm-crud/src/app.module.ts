@@ -10,12 +10,14 @@ import { OrderModule } from './apis/order/orders.module';
 import { PaymentModule } from './apis/payment/payments.module';
 import { UserModule } from './apis/user/users.module';
 import { AuthModule } from './apis/auth/auth.module';
+import { CouponModule } from './apis/coupon/coupon.module';
 // import { AppController } from './app.controller';
 // import { AppService } from './app.service';
 
 @Module({
   imports: [
     AuthModule,
+    CouponModule,
     CustomModule,
     OrderModule,
     PaymentModule,
@@ -32,8 +34,7 @@ import { AuthModule } from './apis/auth/auth.module';
       host: 'localhost',
       port: 3306,
       username: 'root',
-      password: '1234',
-      database: 'myproject03',
+      database: 'team',
       entities: [__dirname + '/apis/**/*.entity.*'],
       synchronize: true,
       logging: true,
