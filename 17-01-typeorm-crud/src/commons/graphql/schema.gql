@@ -67,7 +67,15 @@ type User {
   address: String!
 }
 
+type Coupon {
+  id: String!
+  discount_price: Int!
+  description: String!
+}
+
 type Query {
+  fetchCoupons: [Coupon!]!
+  fecthCoupon(couponId: String!): Coupon!
   fetchCustoms: [Custom!]!
   fetchCustom(customId: String!): Custom!
   fetchOrder: [Order!]!
@@ -83,6 +91,8 @@ type Query {
 
 type Mutation {
   login(email: String!, password: String!): String!
+  createCoupon(createCouponInput: CreateCouponInput!): Coupon!
+  deleteCoupon(couponId: String!): Boolean!
   createCustom(createCustomInput: CreateCustomInput!): Custom!
   createOrder(createOrderInput: CreateOrderInput!): Order!
   Payment(impUid: String!, price: Float!): Payment!
@@ -90,6 +100,11 @@ type Mutation {
   createProduct(createProductInput: CreateProductInput!): Product!
   createReview(createReviewInput: CreateReviewInput!): Review!
   createUser(createUserInput: CreateUserInput!): User!
+}
+
+input CreateCouponInput {
+  discount_price: Int!
+  description: String!
 }
 
 input CreateCustomInput {
