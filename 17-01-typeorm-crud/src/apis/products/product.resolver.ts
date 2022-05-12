@@ -24,14 +24,4 @@ export class ProductResolver {
   ) {
     return this.productService.create({ createProductInput });
   }
-  // @Mutation(() => Product)
-  // async updateProduct(
-  //   @Args('productId') productId: string,
-  //   @Args('updateProductInput') updateProductInput: UpdateProductInput,
-  // ) {
-  //   // 판매 완료가 되었는지 확인해보기
-  //   await this.productService.checkSoldout({ productId });
-  //   // 수정하기
-  //   return await this.productService.update({ productId, updateProductInput });
-  // }
 }
